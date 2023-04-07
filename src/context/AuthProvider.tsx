@@ -3,14 +3,16 @@ import { User } from "../api/types";
 import clientAxios from "../config/clientAxios";
 
 export interface AuthContextType {
-  auth: User | null | {} | any;
-  setAuth: React.Dispatch<React.SetStateAction<User[]>>;
+  auth: User ;
+  setAuth: React.Dispatch<React.SetStateAction<User>>;
   loading: boolean;
   logout: () => void;
 }
 
 const initialAuthContext: AuthContextType = {
-  auth: null,
+  auth: {
+    name: "Challenge"
+  },
   setAuth: () => {},
   loading: false,
   logout: () => {},

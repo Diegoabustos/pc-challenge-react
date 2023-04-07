@@ -1,9 +1,9 @@
 export interface User {
-    name: string;
-    paternalSurname: string;
-    maternalSurname: string;
-    phone: string;
-    email: string;
+    name?: string;
+    paternalSurname?: string;
+    maternalSurname?: string;
+    phone?: string;
+    email?: string;
 }
 
 export interface Report {

@@ -6,11 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 
 export interface DashContextType {
-  dashboard: Report | null | [];
+  dashboard: Report;
 }
 
 const initialDashContext: DashContextType = {
-  dashboard: null,
+  dashboard: {
+    averageTicket: 0,
+    topTicket: 0,
+    topPaymentMethod: "",
+    revenuePerHour: []
+  },
 };
 
 export const DashContext = createContext<DashContextType>(initialDashContext);
@@ -48,7 +53,7 @@ export const DashProvider = ({ children }: DashProviderProps) => {
         
         navigate('/dashboard')
       } catch (error) {
-        setDashboard([])
+        console.error(error)
       } 
     };
     authUser();
