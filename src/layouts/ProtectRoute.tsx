@@ -1,10 +1,11 @@
 import { Outlet, Navigate } from "react-router-dom";
+import { Spinner } from "../components/Spinner";
 import { useAuth } from "../hooks/useAuth";
 
 export const ProtectRoute = () => {
   const { auth, loading } = useAuth();
 
-  if (loading) return "Cargando...";
+  if (loading) return <Spinner />;
   const token = localStorage.getItem("token")
 
   return <>{token ? 

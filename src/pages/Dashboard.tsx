@@ -12,10 +12,11 @@ import { DashContextType } from "../context/DashProvider";
 import { DashboardCard } from "../components/DashboardCard";
 import { DashboardGraph } from "../components/DashboardGraph";
 import { Button } from "../components/Button";
+import { AuthContextType } from "../context/AuthProvider";
 
 export const Dashboard = () => {
   const { dashboard }: DashContextType = useDash();
-  const { auth, logout } = useAuth();
+  const { auth, logout }: AuthContextType = useAuth();
 
   // Function to calculate the total amount of the day
   const sum = dashboard!.revenuePerHour.reduce(
@@ -35,7 +36,7 @@ export const Dashboard = () => {
         <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
           <div className="mr-6">
             <h1 className="text-4xl font-semibold mb-2">
-              Bienvenido {auth!.name}
+              Bienvenido {auth.name}
             </h1>
             <h2 className="text-gray-600 ml-0.5">
               Reporte de <span className="font-bold">Hoy</span>

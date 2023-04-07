@@ -26,13 +26,13 @@ const LineChart: React.FC<LineChartProps> = ({ data }) => {
       x: {
         title: {
           display: true,
-          text: 'Hour of the Day',
+          text: 'Hora del día',
         },
       },
       y: {
         title: {
           display: true,
-          text: 'Value',
+          text: 'Cantidad',
         },
       },
     },
