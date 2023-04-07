@@ -7,6 +7,8 @@ import { convertMoney, paymentMethod } from "../helpers";
 
 // Context
 import { DashContextType } from "../context/DashProvider";
+import { loseIcon, winIcon } from "../assets/icons";
+
 
 // Components
 import { DashboardCard } from "../components/DashboardCard";
@@ -53,14 +55,23 @@ export const Dashboard = () => {
           <div className="p-4 lg:w-3/6 flex flex-col gap-2">
             <DashboardCard
               description="Ticket Promedio"
+              icon={loseIcon}
+              Pill={true}
+              percentage="10.8%"
+              positive={false}
               value={convertMoney(dashboard!.averageTicket)}
             />
             <DashboardCard
               description="Ticket tope"
+              icon={winIcon}
+              Pill={true}
+              percentage="12.6%"
+              positive={true}
               value={convertMoney(dashboard!.topTicket)}
             />
             <DashboardCard
               description="Método de pago más usado"
+              Pill={false}
               value={paymentMethod(dashboard!.topPaymentMethod)}
             />
           </div>
