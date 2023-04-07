@@ -31,8 +31,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState(true)
 
   
+  const token = localStorage.getItem("token");
   useEffect(() => {
-    const token = localStorage.getItem("token");
     const authUser = async () => {
       if (!token) {
         setLoading(false);
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       }
     };
     authUser();
-  }, []);
+  }, [token]);
 
   const logout = () => {
     setAuth({})

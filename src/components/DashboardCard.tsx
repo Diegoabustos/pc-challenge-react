@@ -1,7 +1,7 @@
 
 type DashboardCardProps = {
   description: string
-  value: [];
+  value: [] | string;
 }
 
 export const DashboardCard = ({value, description}: DashboardCardProps) => {
